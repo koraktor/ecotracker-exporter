@@ -17,8 +17,8 @@ import (
 var addr = flag.String("listen-address", ":9776", "The address to listen on for HTTP requests.")
 var enableRuntimeMetrics = flag.Bool("runtime-metrics", false, "Enable prometheus runtime metrics.")
 var logLevel = zap.LevelFlag("log-level", zap.WarnLevel, "The information level used for logging")
-var host = flag.String("host", "", "The password used for logging into S-Miles Cloud.")
-var port = flag.Int("port", 80, "The port .")
+var host = flag.String("host", "", "The host name or ip address of the EcoTracker device.")
+var port = flag.Int("port", 80, "The port number to connect to.")
 
 var log = initLog()
 
