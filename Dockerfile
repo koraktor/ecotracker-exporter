@@ -5,6 +5,7 @@ ARG OS="linux"
 
 WORKDIR /src
 COPY ./. ./
+RUN go mod tidy
 RUN go build -o /build/${OS}-${ARCH}/ecotracker_exporter .
 
 FROM golang:1.26-alpine
