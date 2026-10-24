@@ -109,5 +109,15 @@ func (m metrics) Collect(ch chan<- prometheus.Metric) {
 }
 
 func (m metrics) Describe(ch chan<- *prometheus.Desc) {
+	ch <- m.power
+	ch <- m.powerAvg
+	ch <- m.powerLastUpdate
+	ch <- m.powerPhase1
+	ch <- m.powerPhase2
+	ch <- m.powerPhase3
+	ch <- m.energyCounterOut
+	ch <- m.energyCounterIn
+	ch <- m.energyCounterInT1
+	ch <- m.energyCounterInT2
 	ch <- m.up
 }
