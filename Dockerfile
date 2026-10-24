@@ -1,14 +1,16 @@
+FROM golang:1.26-alpine AS builder
+
 ARG ARCH="amd64"
 ARG OS="linux"
-FROM golang:1.26-alpine AS builder
 
 WORKDIR /src
 COPY ./. ./
 RUN go build -o /build/${OS}-${ARCH}/ecotracker_exporter .
 
+FROM golang:1.26-alpine
+
 ARG ARCH="amd64"
 ARG OS="linux"
-FROM golang:1.26-alpine
 
 RUN apk upgrade --no-cache
 
